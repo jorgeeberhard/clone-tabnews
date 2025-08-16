@@ -12,18 +12,18 @@ export default function StatusPage() {
       <h1>Status</h1>
       <UpdatedAt />
     </>
-  )
+  );
 }
 
 function UpdatedAt() {
   const { isLoading, data } = useSWR("/api/v1/status", fetchAPI, {
-    refreshInterval: 2000
-  })
+    refreshInterval: 2000,
+  });
 
-  let updatedAtText = "Carregando..."
+  let updatedAtText = "Carregando...";
   let maxConnectionsText = "Carregando...";
   let versionText = "Carregando...";
-  let openedConnectionsText = "Carregando..."
+  let openedConnectionsText = "Carregando...";
 
   if (!isLoading && data) {
     updatedAtText = new Date(data.updated_at).toLocaleString("pt-BR");
@@ -42,6 +42,5 @@ function UpdatedAt() {
         <p>Conexões máximas: {maxConnectionsText}</p>
       </div>
     </div>
-  )
-
+  );
 }
