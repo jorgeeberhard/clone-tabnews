@@ -51,12 +51,10 @@ function DatabaseStatus() {
 
   return (
     <div>
-
       <h2>Database</h2>
       <p>Versão: {versionText}</p>
       <p>Conexões abertas: {openedConnectionsText}</p>
       <p>Conexões máximas: {maxConnectionsText}</p>
-
     </div>
   );
 }
